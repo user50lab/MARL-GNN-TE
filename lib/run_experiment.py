@@ -50,10 +50,12 @@ class Runner(object):
     def set_logs_and_checkpoints(self):
         experiment_identifier = self.agent.set_experiment_identifier(self.only_eval)
 
+        # 日志存储路径
         writer_dir = os.path.join(self.base_dir, experiment_identifier)
         if not os.path.exists(writer_dir):
             os.makedirs(writer_dir)
-        
+
+        # 检查点文件存储路径
         checkpoint_dir = os.path.join(self.checkpoint_base_dir, experiment_identifier)
         if self.save_checkpoints and (not os.path.exists(checkpoint_dir)):
             os.makedirs(checkpoint_dir)
