@@ -46,6 +46,7 @@ class Runner(object):
         else:
             self.agent.train_and_evaluate()
 
+    # 设置日志和检查点（checkpoint）目录，并配置日志处理。
     def set_logs_and_checkpoints(self):
         experiment_identifier = self.agent.set_experiment_identifier(self.only_eval)
 
